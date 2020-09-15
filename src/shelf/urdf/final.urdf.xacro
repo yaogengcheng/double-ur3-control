@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro"
+       name="final" >
+  <xacro:arg name="transmission_hw_interface" default="hardware_interface/PositionJointInterface"/>
+
+  <!-- common stuff -->
+  <xacro:include filename="$(find ur_description)/urdf/common.gazebo.xacro" />
+
+   <!-- ur3 -->
+  <xacro:include filename="$(find ur_description)/urdf/ur3.urdf.xacro" />
+  <!-- <xacro:include filename="$(find shelf)/meshes/kinect.xacro"/> -->
+
+  <xacro:include filename="$(find shelf)/urdf/shelf.urdf.xacro" />
+
+  <!-- arm 1-->
+  <xacro:ur3_robot prefix="left" joint_limited="false"
+    transmission_hw_interface="$(arg transmission_hw_interface)"
+  />
+
+  <!-- arm 2-->
+  <xacro:ur3_robot prefix="right" joint_limited="false"
+    transmission_hw_interface="$(arg transmission_hw_interface)"
+  />
+  <!-- <xacro:kinect_camera prefix="kinect"/> -->
+   <shelf />
+
+<link name="world" />
+
+  <joint name="world_joint" type="fixed">
+    <parent link="world" />
+    <child link = "base_link" />
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+
+  <joint name="left_to_shelf" type="fixed">
+  <parent link="camera-link" />
+    <child link = "leftbase_link" />
+    <origin xyz="-0.180 -0.094 0.0" rpy="1.5708 0 -0.7854" />
+
+  </joint>
+   <joint name="right_to_shelf" type="fixed">
+  <parent link="world" />
+    <child link = "rightbase_link" /> 
+    <origin xyz="0.128 -0.482 1.230" rpy="3.1416 -0.7854 0" />
+  </joint>
+
+  <!-- <joint name="kinect_to_link" type="fixed">
+   <parent link="camera-link" />
+    <child link = "kinect_link" />
+    <origin xyz="0 0.1 0.06" rpy="-1.57 -1.57 00" />
+  </joint> -->
+
+</robot>
