@@ -1,0 +1,8 @@
+prefix=/home/asa/ygc_ur/install
+
+Name: ur_e_description
+Description: Description of ur_e_description
+Version: 1.2.7
+Cflags: 
+Libs: -L/home/asa/ygc_ur/install/lib 
+Requires: 

@@ -1,0 +1,8 @@
+prefix=/home/asa/ygc_ur/install
+
+Name: ur_msgs
+Description: Description of ur_msgs
+Version: 1.2.7
+Cflags: -I/home/asa/ygc_ur/install/include
+Libs: -L/home/asa/ygc_ur/install/lib 
+Requires: message_runtime std_msgs

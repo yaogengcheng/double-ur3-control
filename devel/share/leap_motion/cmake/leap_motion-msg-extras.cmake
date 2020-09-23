@@ -1,0 +1,2 @@
+set(leap_motion_MESSAGE_FILES "/home/asa/ygc_ur/src/leap_motion/msg/Arm.msg;/home/asa/ygc_ur/src/leap_motion/msg/Bone.msg;/home/asa/ygc_ur/src/leap_motion/msg/Finger.msg;/home/asa/ygc_ur/src/leap_motion/msg/Gesture.msg;/home/asa/ygc_ur/src/leap_motion/msg/Hand.msg;/home/asa/ygc_ur/src/leap_motion/msg/Human.msg;/home/asa/ygc_ur/src/leap_motion/msg/leap.msg;/home/asa/ygc_ur/src/leap_motion/msg/leapros.msg")
+set(leap_motion_SERVICE_FILES "")

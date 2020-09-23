@@ -1,0 +1,58 @@
+# MoveIt-specific simulation settings
+moveit_sim_hw_interface:
+  joint_model_group: controllers_initial_group_
+  joint_model_group_pose: controllers_initial_pose_
+# Settings for ros_control control loop
+generic_hw_control_loop:
+  loop_hz: 300
+  cycle_time_error_threshold: 0.01
+# Settings for ros_control hardware interface
+hardware_interface:
+  joints:
+    - rightshoulder_pan_joint
+    - rightshoulder_lift_joint
+    - rightelbow_joint
+    - rightwrist_1_joint
+    - rightwrist_2_joint
+    - rightwrist_3_joint
+    - joint9
+    - leftshoulder_pan_joint
+    - leftshoulder_lift_joint
+    - leftelbow_joint
+    - leftwrist_1_joint
+    - leftwrist_2_joint
+    - leftwrist_3_joint
+  sim_control_mode: 1  # 0: position, 1: velocity
+# Publish all joint states
+# Creates the /joint_states topic necessary in ROS
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+controller_list:
+  - name: left_manipulator_controller
+    action_ns: follow_joint_trajectory
+    default: True
+    type: FollowJointTrajectory
+    joints:
+      - leftshoulder_pan_joint
+      - leftshoulder_lift_joint
+      - leftelbow_joint
+      - leftwrist_1_joint
+      - leftwrist_2_joint
+      - leftwrist_3_joint
+  - name: right_manipulator_controller
+    action_ns: follow_joint_trajectory
+    default: True
+    type: FollowJointTrajectory
+    joints:
+      - rightshoulder_pan_joint
+      - rightshoulder_lift_joint
+      - rightelbow_joint
+      - rightwrist_1_joint
+      - rightwrist_2_joint
+      - rightwrist_3_joint
+initial:
+  - group: right_manipulator
+    pose:  right_up
+  - group: left_manipulator
+    pose:  left_up

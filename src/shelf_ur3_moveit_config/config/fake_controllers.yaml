@@ -1,0 +1,17 @@
+controller_list:
+  - name: fake_left_manipulator_controller
+    joints:
+      - leftshoulder_pan_joint
+      - leftshoulder_lift_joint
+      - leftelbow_joint
+      - leftwrist_1_joint
+      - leftwrist_2_joint
+      - leftwrist_3_joint
+  - name: fake_right_manipulator_controller
+    joints:
+      - rightshoulder_pan_joint
+      - rightshoulder_lift_joint
+      - rightelbow_joint
+      - rightwrist_1_joint
+      - rightwrist_2_joint
+      - rightwrist_3_joint

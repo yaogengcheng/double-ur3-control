@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+  Universal robot ur3 launch.  Loads ur3 robot description (see ur_common.launch
+  for more info)
+
+  Usage:
+    ur3_bringup.launch robot_ip:=<value>
+-->
+<launch>
+
+  <!-- robot_ip: IP-address of the robot's socket-messaging server -->
+  <arg name="robot_ip" default="192.168.1.2"/>
+  <arg name="robot_ip2" default="192.168.1.1"/>
+   <arg name="sim"/>
+  <arg name="robot_ip"/>
+  <arg name="limited" default="false"/>
+  <arg name="min_payload"  default="0.0"/>
+  <arg name="max_payload"  default="3.0"/>
+  <arg name="prefix" default="" />
+  <!-- robot model -->
+  <include file="$(find shelf_ur3_moveit_config)/launch/shelf_ur3_upload.launch">
+    <arg name="limited" value="$(arg limited)"/>
+  </include>
+
+  <!-- ur common -->
+  <include file="$(find shelf_ur3_moveit_config)/launch/shelf_ur_common.launch">
+    <arg name="robot_ip" value="$(arg robot_ip)"/>
+    <arg name="sim" value="$(arg sim)"/>
+    <arg name="robot_ip2" value="$(arg robot_ip2)"/>
+    <arg name="min_payload"  value="$(arg min_payload)"/>
+    <arg name="max_payload"  value="$(arg max_payload)"/>
+    <arg name="prefix" value="$(arg prefix)" />
+  </include>
+
+</launch>
