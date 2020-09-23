@@ -1,8 +1,0 @@
-prefix=/home/asa/ygc_ur/install
-
-Name: ur3_moveit
-Description: Description of ur3_moveit
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/asa/ygc_ur/install/lib 
-Requires: 

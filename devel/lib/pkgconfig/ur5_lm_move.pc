@@ -1,8 +1,0 @@
-prefix=/home/asa/ygc_ur/devel
-
-Name: ur5_lm_move
-Description: Description of ur5_lm_move
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/asa/ygc_ur/devel/lib 
-Requires: 

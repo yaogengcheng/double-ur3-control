@@ -25,6 +25,7 @@ robot_arm.set_num_planning_attempts(15)
 # rospy.sleep(2)
 # # Allow replanning to increase the odds of a solution
 <<<<<<< HEAD
+<<<<<<< HEAD
 robot_arm.allow_replanning(True)
 # waypoints=[]
 
@@ -79,6 +80,8 @@ Pose_goal.pose.orientation.w = 0.7032741671255489
 
 # waypoints.append(Pose_goal.pose)
 =======
+=======
+>>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
 # robot_arm.allow_replanning(True)
 waypoints=[]
 
@@ -106,12 +109,16 @@ Pose_goal.pose.orientation = start_pose.orientation
 # rospy.sleep(3)
 
 waypoints.append(Pose_goal.pose)
+<<<<<<< HEAD
+>>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
+=======
 >>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
 
 # initialJointValues = [1.7002233551934294,
 #                   0.3643429761400562,
 #                   -1.009924514952229,
 #                   5.495829022423809,
+<<<<<<< HEAD
 <<<<<<< HEAD
 #                   -5.5426909420647155,to_link
 # robot_arm.execute(plan,wait=True)
@@ -131,6 +138,8 @@ waypoints.append(Pose_goal.pose)
 #     attempts+=1
 #     print("attempt:%s " %attempts)to_link
 =======
+=======
+>>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
 #                   -5.5426909420647155,
 #                   0.026168836510745756]
 # robot_arm.set_joint_value_target(initialJointValues)
@@ -153,12 +162,16 @@ while fraction<1.0 and attempts<maxtries:
     print("attempt:%s " %attempts)
     if fraction==1:
         robot_arm.execute(plan)
+<<<<<<< HEAD
+>>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
+=======
 >>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
 
 
 
 # while not rospy.is_shutdown():
 #     Pose_goal = robot_arm.get_current_pose()
+<<<<<<< HEAD
 <<<<<<< HEAD
 #     print(Pose_goal)
 #     t = rospy.Time(0)    
@@ -171,6 +184,8 @@ while fraction<1.0 and attempts<maxtries:
 #         rospy.logerr('Transformation is not possible!')
 #         sys.exit(0)theta
 =======
+=======
+>>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
 #     trans_Pose_goal = listener.transformPose('/rightbase_link',Pose_goale)
 #     print(robot_arm.get_current_joint_values())
 #     print(trans_Pose_goal)
@@ -184,6 +199,9 @@ while fraction<1.0 and attempts<maxtries:
 # rospy.sleep(6)
 # print("left arm pos: {}".format(left_arm.get_current_joint_values()))
 
+<<<<<<< HEAD
+>>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
+=======
 >>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
 
 # rospy.sleep(5)

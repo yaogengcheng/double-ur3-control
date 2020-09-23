@@ -3,7 +3,10 @@
 import copy
 import sys
 <<<<<<< HEAD
+<<<<<<< HEAD
 import math
+=======
+>>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
 =======
 >>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
 
@@ -27,8 +30,11 @@ class MoveIt(object):
         self.paused = True  # flag to determine if program is paused
         self.executing = False  # flag to determine if we are currently executing a plan
 <<<<<<< HEAD
+<<<<<<< HEAD
         self.waypoints = []
         self.waypoints.append(robot_initialPos)
+=======
+>>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
 =======
 >>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
 
@@ -42,24 +48,33 @@ class MoveIt(object):
 
         # boundaries | initial coords: x: 0.603 y: 0.124 z: 0.566
 <<<<<<< HEAD
+<<<<<<< HEAD
         self.maxLeft = self.robot_initialPos.position.x - 0.100  # x left
         self.maxRight = self.robot_initialPos.position.x + 0.100  # x right
         self.maxHeight = self.robot_initialPos.position.y - 0.300  # y height
         self.maxUp = self.robot_initialPos.position.z + 0.20  # z up
         self.maxDown = self.robot_initialPos.position.z - 0.20  # z down
 =======
+=======
+>>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
         self.maxLeft = self.robot_initialPos.x - 0.100  # x left
         self.maxRight = self.robot_initialPos.x + 0.100  # x right
         self.maxHeight = self.robot_initialPos.y - 0.300  # y height
         self.maxUp = self.robot_initialPos.z + 0.20  # z up
         self.maxDown = self.robot_initialPos.z - 0.20  # z down
+<<<<<<< HEAD
+>>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
+=======
 >>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
 
         # maximum step, user cannot move more than this in one step
         self.maxStep = 0.05
         self.conversion_value = 0.0005
 <<<<<<< HEAD
+<<<<<<< HEAD
         self.prev_posArray = [0,0,0]
+=======
+>>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
 =======
 >>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
 
@@ -289,6 +304,7 @@ class MoveIt(object):
             "Current Position\nx: %.3f\ny: %.3f\nz: %.3f" % (desiredPos.x, desiredPos.y, desiredPos.z))
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         # pose_goal = geometry_msgs.msg.Pose()
         # pose_goal.orientation.w = 0.0
         # pose_goal.position = desiredPos  # red line      0.2   0.2
@@ -320,6 +336,8 @@ class MoveIt(object):
             print("=========executing fail==========")
 
 =======
+=======
+>>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
         pose_goal = geometry_msgs.msg.Pose()
         pose_goal.orientation.w = 0.0
         pose_goal.position = desiredPos  # red line      0.2   0.2
@@ -388,6 +406,9 @@ class MoveIt(object):
         # # execute the plan
         # group.execute(plan)
         # we are no longer executing
+<<<<<<< HEAD
+>>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
+=======
 >>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
         self.executing = False
 
@@ -401,9 +422,13 @@ class MoveIt(object):
             # check if x,y,z is > than 0.0 (avoid passing 0.0 coordinates)
             if any(x > 0.0 for x in posArray):
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if math.pow(self.prev_posArray[0]-posArray[0],2)+math.pow(self.prev_posArray[1]-posArray[1],2)+math.pow(self.prev_posArray[2]-posArray[2],2) > 0.01:
                     self.prev_posArray = posArray
                     self.beginPlan(palmPos)
+=======
+                self.beginPlan(palmPos)
+>>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
 =======
                 self.beginPlan(palmPos)
 >>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
@@ -524,12 +549,18 @@ if __name__ == '__main__':
 
         # save these positions on run
 <<<<<<< HEAD
+<<<<<<< HEAD
         robot_initialPos = group.get_current_pose().pose
 =======
+=======
+>>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
         robot_initialPos = geometry_msgs.msg.Pose().position
         robot_initialPos.x = group.get_current_pose().pose.position.x
         robot_initialPos.y = group.get_current_pose().pose.position.y
         robot_initialPos.z = group.get_current_pose().pose.position.z
+<<<<<<< HEAD
+>>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
+=======
 >>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
 
         # instance of MoveIt() class

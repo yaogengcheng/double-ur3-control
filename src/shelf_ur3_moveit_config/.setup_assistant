@@ -9,7 +9,11 @@ moveit_setup_assistant_config:
     author_name: ygc
     author_email: yaogc0701@gmail.com
 <<<<<<< HEAD
+<<<<<<< HEAD
     generated_timestamp: 1600572268
+=======
+    generated_timestamp: 1600154484
+>>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
 =======
     generated_timestamp: 1600154484
 >>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9

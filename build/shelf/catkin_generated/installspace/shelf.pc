@@ -1,8 +1,0 @@
-prefix=/home/asa/ygc_ur/install
-
-Name: shelf
-Description: Description of shelf
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/asa/ygc_ur/install/lib 
-Requires: 

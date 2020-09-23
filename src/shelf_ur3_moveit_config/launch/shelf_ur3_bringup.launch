@@ -9,9 +9,12 @@
 <launch>
 
   <!-- robot_ip: IP-address of the robot's socket-messaging server -->
+<<<<<<< HEAD
   <arg name="robot_ip" default="192.168.1.2"/>
   <arg name="robot_ip2" default="192.168.1.1"/>
    <arg name="sim"/>
+=======
+>>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
   <arg name="robot_ip"/>
   <arg name="limited" default="false"/>
   <arg name="min_payload"  default="0.0"/>
@@ -25,8 +28,11 @@
   <!-- ur common -->
   <include file="$(find shelf_ur3_moveit_config)/launch/shelf_ur_common.launch">
     <arg name="robot_ip" value="$(arg robot_ip)"/>
+<<<<<<< HEAD
     <arg name="sim" value="$(arg sim)"/>
     <arg name="robot_ip2" value="$(arg robot_ip2)"/>
+=======
+>>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
     <arg name="min_payload"  value="$(arg min_payload)"/>
     <arg name="max_payload"  value="$(arg max_payload)"/>
     <arg name="prefix" value="$(arg prefix)" />

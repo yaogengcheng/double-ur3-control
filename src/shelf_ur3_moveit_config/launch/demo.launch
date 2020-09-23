@@ -2,8 +2,12 @@
 
   <!-- If sim=false, then robot_ip is required -->
   <arg name="sim" default="true" />
+<<<<<<< HEAD
   <!-- <arg name="robot_ip" unless="$(arg sim)" /> -->
   <!-- <arg name="robot_ip" unless="$(arg sim)" /> -->
+=======
+  <arg name="robot_ip" unless="$(arg sim)" />
+>>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
   <!-- By default, we do not start a database (it can be large) -->
   <arg name="db" default="false" />
   <!-- Allow user to specify database location -->
@@ -22,9 +26,12 @@
   -->
   <arg name="use_gui" default="false" />
 
+<<<<<<< HEAD
   <!-- <remap unless="$(arg sim)" from="/follow_joint_trajectory" to="/right_manipulator_controller/follow_joint_trajectory"/> -->
 
   <!-- Load the URDF, SRDF and  other .yaml configuration files on the param server -->
+=======
+>>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
   <remap unless="$(arg sim)" from="/follow_joint_trajectory" to="/right_manipulator_controller/follow_joint_trajectory"/>
 
   <!-- Load the URDF, SRDF and other .yaml configuration files on the param server -->
@@ -44,9 +51,13 @@
   </group>
   <group unless="$(arg sim)">
       <include file="$(find shelf_ur3_moveit_config)/launch/shelf_ur3_bringup.launch">
+<<<<<<< HEAD
         <!-- <arg name="robot_ip" value="$(arg robot_ip)" /> -->
         <arg name="sim" value="$(arg sim)" />
         <!-- <arg name="robot_ip" value="$(arg robot_ip)" /> -->
+=======
+        <arg name="robot_ip" value="$(arg robot_ip)" />
+>>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
       </include>
     </group>
 

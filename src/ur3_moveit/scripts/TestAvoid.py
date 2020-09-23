@@ -4,9 +4,14 @@
 import rospy, sys
 import moveit_commander
 <<<<<<< HEAD
+<<<<<<< HEAD
 from nav_msgs import path
 from moveit_commander import MoveGroupCommander, PlanningSceneInterface,RobotCommander
 from moveit_msgs.msg import PlanningScene, ObjectColor,DisplayTrajectory
+=======
+from moveit_commander import MoveGroupCommander, PlanningSceneInterface
+from moveit_msgs.msg import PlanningScene, ObjectColor
+>>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
 =======
 from moveit_commander import MoveGroupCommander, PlanningSceneInterface
 from moveit_msgs.msg import PlanningScene, ObjectColor
@@ -32,6 +37,7 @@ class MoveItObstaclesDemo:
         self.colors = dict()
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         self.trajectory_publisher = rospy.Publisher('/path',
                                                      path,
                                                      queue_size=20)
@@ -43,6 +49,11 @@ class MoveItObstaclesDemo:
 
         robot_cmd = RobotCommander()
 
+=======
+        # 等待场景准备就绪
+        rospy.sleep(1)
+
+>>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
 =======
         # 等待场景准备就绪
         rospy.sleep(1)
@@ -78,10 +89,14 @@ class MoveItObstaclesDemo:
         arm.set_named_target('home')
         arm.go()
 <<<<<<< HEAD
+<<<<<<< HEAD
         rospy.sleep(5)
 
         self.tr robot_cmd.get_current_state()
 
+=======
+        rospy.sleep(2)
+>>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
 =======
         rospy.sleep(2)
 >>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
@@ -136,6 +151,7 @@ class MoveItObstaclesDemo:
         target_pose.pose.orientation.w = 1.0
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         
 
         # 控制机械臂运动到目标位置
@@ -145,6 +161,10 @@ class MoveItObstaclesDemo:
         self.trajectory.trajectory.append(plan_tra)
         self.trajectory_publisher.publish(self.trajectory)
 
+=======
+        # 控制机械臂运动到目标位置
+        arm.set_pose_target(target_pose, end_effector_link)
+>>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
 =======
         # 控制机械臂运动到目标位置
         arm.set_pose_target(target_pose, end_effector_link)

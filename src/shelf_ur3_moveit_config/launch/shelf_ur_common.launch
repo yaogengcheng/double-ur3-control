@@ -9,8 +9,11 @@
 <launch>
   <!-- robot_ip: IP-address of the robot's socket-messaging server -->
   <arg name="robot_ip" />
+<<<<<<< HEAD
   <arg name="robot_ip2" />
   <arg name="sim"/>
+=======
+>>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
   <arg name="min_payload" />
   <arg name="max_payload" />
   <arg name="prefix" default="right" />
@@ -25,10 +28,13 @@
 
   <!-- driver -->
   <node name="ur_driver" pkg="ur_modern_driver" type="ur_driver" output="screen">
+<<<<<<< HEAD
     <remap unless="$(arg sim)" from="/follow_joint_trajectory" to="/right_manipulator_controller/follow_joint_trajectory"/>
     <param name="prefix" type="str" value="$(arg prefix)" />
     <param name="robot_ip_address" type="str" value="$(arg robot_ip)" />
     <param name="reverse_port" type="int" value="50001" />  
+=======
+>>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
   <!-- copy the specified IP address to be consistant with ROS-Industrial spec. -->
     <param name="prefix" type="str" value="$(arg prefix)" />
     <param name="robot_ip_address" type="str" value="$(arg robot_ip)" />
@@ -40,6 +46,7 @@
     <param name="tool_frame" type="str" value="$(arg tool_frame)"/>
     <param name="prefix" type="str" value="right"/>
   </node>
+<<<<<<< HEAD
 
   <node name="ur_driver2" pkg="ur_modern_driver" type="ur_driver" output="screen">
     <remap unless="$(arg sim)" from="/follow_joint_trajectory" to="/left_manipulator_controller/follow_joint_trajectory"/>
@@ -54,4 +61,6 @@
     <param name="tool_frame" type="str" value="lefttool0_controller"/>
     <param name="prefix" type="str" value="left"/>
   </node>
+=======
+>>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
 </launch>

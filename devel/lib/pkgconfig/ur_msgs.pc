@@ -1,8 +1,0 @@
-prefix=/home/asa/ygc_ur/devel
-
-Name: ur_msgs
-Description: Description of ur_msgs
-Version: 1.2.7
-Cflags: -I/home/asa/ygc_ur/devel/include
-Libs: -L/home/asa/ygc_ur/devel/lib 
-Requires: message_runtime std_msgs

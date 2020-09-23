@@ -11,7 +11,10 @@
     <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
     <group name="left_manipulator">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <link name="lefttool0" />
+=======
+>>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
 =======
 >>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
         <joint name="leftshoulder_pan_joint" />
@@ -23,7 +26,10 @@
     </group>
     <group name="right_manipulator">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <link name="righttool0" />
+=======
+>>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
 =======
 >>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
         <joint name="rightshoulder_pan_joint" />

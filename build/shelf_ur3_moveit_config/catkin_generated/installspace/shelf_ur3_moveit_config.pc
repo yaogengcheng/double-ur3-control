@@ -1,8 +1,0 @@
-prefix=/home/asa/ygc_ur/install
-
-Name: shelf_ur3_moveit_config
-Description: Description of shelf_ur3_moveit_config
-Version: 0.3.0
-Cflags: 
-Libs: -L/home/asa/ygc_ur/install/lib 
-Requires: 
