@@ -510,7 +510,7 @@
   </link>
   <joint
     name="joint9"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="0 1.39620680392648 0"
       rpy="0 0.0531011503420065 0" />
@@ -784,4 +784,7 @@
     <axis
       xyz="0 0 0" />
   </joint>
+
+
+
 </robot>

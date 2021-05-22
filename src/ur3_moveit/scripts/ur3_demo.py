@@ -32,18 +32,10 @@ class TestMove():
         self.Pose_goal = Pose()
 
         self.robot_arm = MoveGroupCommander(GROUP_NAME_ARM)
-        # robot_gripper = MoveGroupCommander(GROUP_NAME_GRIPPER)
-        self.robot_arm.set_goal_orientation_tolerance(0.005)
-        self.robot_arm.set_planning_time(5)
-        self.robot_arm.set_num_planning_attempts(5)
-
-        rospy.sleep(2)
-        # Allow replanning to increase the odds of a solution
-        self.robot_arm.allow_replanning(True)
-
-    def move_code(self):
-        # self.robot_arm.set_named_target("up")  #go to goal state.
+        # robot_gripper = MoveGroupComm # self.robot_arm.set_named_target("up")  #go to goal state.
         # self.robot_arm.go()
+        # print("====== move plan go to home 1 ======")
+        # rospy.sleep(2)
         # print("====== move plan go to home 1 ======")
         # rospy.sleep(2)
         #        print("====== move plan go to up ======")
@@ -54,14 +46,22 @@ class TestMove():
 
         #        robot_arm.set_named_target("up")
         #        robot_arm.go(wait=True)
-
+        Pose_goal.header.frame_id = 'rightbase_link'
+        Pose_goal.pose.position.x = -0.1955793462195291   # red line      0.2   0.2
+        Pose_goal.pose.position.y = 0.3456909607161672  # green line  0.15   0.15
+        Pose_goal.pose.position.z = 0.16049011785234568  # blue line   # 0.35   0.6
+        # Pose_goal.pose.orientation = start_pose.orientation
+        Pose_goal.pose.orientation.x = 0.28520761755123414
+        Pose_goal.pose.orientation.y = 0.24468120052517786
+        Pose_goal.pose.orientation.z = 0.6034841927127607
+        Pose_goal.pose.orientation.w = 0.7032741671255489
         self.robot_arm.set_pose_target(self.Pose_goal)  # go to goal state.
         self.robot_arm.go(True)
         print("====== move plan go to Pose_goal ======")
         #rospy.sleep(2)
 
-        robot_state = self.robot_arm.get_current_pose();
-        robot_angle = self.robot_arm.get_current_joint_values();
+        robot_state = self.robot_arm.get_current_pose()
+        robot_angle = self.robot_arm.get_current_joint_values()
 
         print(robot_state)
 
@@ -76,8 +76,8 @@ class TestMove():
 
 if __name__ == '__main__':
     tm = TestMove()
-    tm.__init__()
-    tm.listener()
+    # tm.listener()
+    tm.move_code()
 
     rospy.spin()
     roscpp_shutdown()

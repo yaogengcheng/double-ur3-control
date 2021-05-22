@@ -51,8 +51,3 @@ controller_list:
       - rightwrist_1_joint
       - rightwrist_2_joint
       - rightwrist_3_joint
-initial:
-  - group: right_manipulator
-    pose:  right_up
-  - group: left_manipulator
-    pose:  left_up

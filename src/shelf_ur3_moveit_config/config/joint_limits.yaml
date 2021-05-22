@@ -4,61 +4,61 @@
 joint_limits:
   leftelbow_joint:
     has_velocity_limits: true
-    max_velocity: 0.15
+    max_velocity: 2.25
     has_acceleration_limits: false
-    max_acceleration: 0
+    max_acceleration: 2
   leftshoulder_lift_joint:
     has_velocity_limits: true
-    max_velocity: 0.16
+    max_velocity: 2.26
     has_acceleration_limits: false
-    max_acceleration: 0
+    max_acceleration: 2
   leftshoulder_pan_joint:
     has_velocity_limits: true
-    max_velocity: 0.16
+    max_velocity: 2.26
     has_acceleration_limits: false
-    max_acceleration: 0
+    max_acceleration: 2
   leftwrist_1_joint:
     has_velocity_limits: true
-    max_velocity: 0.2
+    max_velocity: 2.1
     has_acceleration_limits: false
-    max_acceleration: 0
+    max_acceleration: 2
   leftwrist_2_joint:
     has_velocity_limits: true
-    max_velocity: 0.2
+    max_velocity: 2.1
     has_acceleration_limits: false
-    max_acceleration: 0
+    max_acceleration: 2
   leftwrist_3_joint:
     has_velocity_limits: true
-    max_velocity: 0.2
+    max_velocity: 2.1
     has_acceleration_limits: false
-    max_acceleration: 0
+    max_acceleration: 2
   rightelbow_joint:
     has_velocity_limits: true
-    max_velocity: 0.15
+    max_velocity: 2.25
     has_acceleration_limits: false
-    max_acceleration: 0
+    max_acceleration: 2
   rightshoulder_lift_joint:
     has_velocity_limits: true
-    max_velocity: 0.16
+    max_velocity: 2.26
     has_acceleration_limits: false
-    max_acceleration: 0
+    max_acceleration: 2
   rightshoulder_pan_joint:
     has_velocity_limits: true
-    max_velocity: 0.16
+    max_velocity: 2.26
     has_acceleration_limits: false
-    max_acceleration: 0
+    max_acceleration: 2
   rightwrist_1_joint:
     has_velocity_limits: true
-    max_velocity: 0.2
+    max_velocity: 2.1
     has_acceleration_limits: false
-    max_acceleration: 0
+    max_acceleration: 2
   rightwrist_2_joint:
     has_velocity_limits: true
-    max_velocity: 0.2
+    max_velocity: 2.1
     has_acceleration_limits: false
-    max_acceleration: 0
+    max_acceleration: 2
   rightwrist_3_joint:
     has_velocity_limits: true
-    max_velocity: 0.2
+    max_velocity: 2.1
     has_acceleration_limits: false
-    max_acceleration: 0
+    max_acceleration: 2

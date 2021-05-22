@@ -44,6 +44,61 @@
     <origin xyz="0.128 -0.482 1.230" rpy="3.1416 -0.7854 0" />
   </joint>
 
+
+   <link
+    name="end-effector">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="4.15584212369344" />
+      <inertia
+        ixx="0.112252927087711"
+        ixy="0.0837479479460399"
+        ixz="-2.7472184220464E-06"
+        iyy="0.0703122721434724"
+        iyz="3.77730010610742E-06"
+        izz="0.17726014680914" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf/meshes/end-effector.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf/meshes/end-effector.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint15"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="1.57 0 0" />
+    <parent
+      link="lefttool0" />
+    <child
+      link="end-effector" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
   <!-- <joint name="kinect_to_link" type="fixed">
    <parent link="camera-link" />
     <child link = "kinect_link" />

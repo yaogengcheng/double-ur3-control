@@ -11,10 +11,10 @@
 
     <!-- Load UR3 URDF file - robot description file -->
     <include file="$(find ur3_moveit_config)/launch/planning_context.launch">
-      <arg name="load_robot_description" value="true" />
+      <arg name="load_robot_description" value="true"/>
       <arg name="limited" value="$(arg limited)" />
     </include>
-
+   
     <!-- If sim mode, run the simulator -->
     <group if="$(arg sim)">
       <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
@@ -23,15 +23,24 @@
       </node>
     </group>
 
+     <group if="$(arg sim)">
+     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
+   </group>
+
     <!-- If using real robot, initialise connection to the real robot -->
     <group unless="$(arg sim)">
-      <include file="$(find ur3_moveit_config)/launch/ur3_bringup.launch">
+      <include file="$(find ur_modern_driver)/launch/ur3_ros_control.launch">
         <arg name="robot_ip" value="$(arg robot_ip)" />
       </include>
+      <remap from="/follow_joint_trajectory" to="/arm_controller/follow_joint_trajectory"/>
+        <include file="$(find ur3_moveit_config)/launch/move_group.launch">
+            <arg name="limited" default="true" />
+            <arg name="publish_monitored_planning_scene" value="true" />
+        </include>
     </group>
 
     <!-- Given the published joint states, publish tf for the robot links -->
-    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
+    <!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" /> -->
 
     <!-- Launch the move group for motion planning -->
     <group if="$(arg sim)">
@@ -43,23 +52,34 @@
             <arg name="debug" value="$(arg debug)"/>
         </include>
     </group>
-
-    <group unless="$(arg sim)">
-        <include file="$(find ur3_moveit_config)/launch/move_group.launch">
-            <arg name="limited" default="true" />
-            <arg name="publish_monitored_planning_scene" value="true" />
-        </include>
-    </group>
+    
+  
 
     <!-- Launch the RViz visualizer -->
     <include file="$(find ur3_moveit_config)/launch/moveit_rviz.launch">
         <arg name="config" value="true" />
     </include>
 
+    <node pkg="tf" type="static_transform_publisher" name="ur3_broadcaster" args="0.037603459916124383 -0.4941808978329226 -0.043079413573027366 -0.8674764458736541 -0.23855681003576354 0.23644207586069485 -0.15115078117567407 leftbase_link kinect2_rgb_optical_frame 100" />
+
     <!-- Optionally, you can launch a database to record all the activities -->
     <!-- <include file="$(find ur3_moveit_config)/launch/default_warehouse_db.launch" /> -->
 
     <!-- Launch our own script -->
    <!-- <node name="lm_move" pkg="ur3_lm_move" type="lm_move.py" respawn="false" output="screen"></node>-->
+  
+  
+   <!-- Load controller settings -->
+  <rosparam file="$(find ur_modern_driver)/config/ur3_controllers.yaml" command="load"/>
+
+  <!-- spawn controller manager -->
+  <node name="ros_control_controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" args="joint_state_controller force_torque_sensor_controller pos_based_pos_traj_controller" />
+
+  <!-- load other controller -->
+  <node name="ros_control_controller_manager" pkg="controller_manager" type="controller_manager" respawn="false"
+    output="screen" args="load vel_based_pos_traj_controller" />
+
+
 </launch>
 

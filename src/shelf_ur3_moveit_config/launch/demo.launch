@@ -2,12 +2,7 @@
 
   <!-- If sim=false, then robot_ip is required -->
   <arg name="sim" default="true" />
-<<<<<<< HEAD
   <!-- <arg name="robot_ip" unless="$(arg sim)" /> -->
-  <!-- <arg name="robot_ip" unless="$(arg sim)" /> -->
-=======
-  <arg name="robot_ip" unless="$(arg sim)" />
->>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
   <!-- By default, we do not start a database (it can be large) -->
   <arg name="db" default="false" />
   <!-- Allow user to specify database location -->
@@ -26,13 +21,10 @@
   -->
   <arg name="use_gui" default="false" />
 
-<<<<<<< HEAD
   <!-- <remap unless="$(arg sim)" from="/follow_joint_trajectory" to="/right_manipulator_controller/follow_joint_trajectory"/> -->
 
   <!-- Load the URDF, SRDF and  other .yaml configuration files on the param server -->
-=======
->>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
-  <remap unless="$(arg sim)" from="/follow_joint_trajectory" to="/right_manipulator_controller/follow_joint_trajectory"/>
+  <!-- <remap unless="$(arg sim)" from="/follow_joint_trajectory" to="/right_manipulator_controller/follow_joint_trajectory"/> -->
 
   <!-- Load the URDF, SRDF and other .yaml configuration files on the param server -->
   <include file="$(find shelf_ur3_moveit_config)/launch/planning_context.launch">
@@ -51,20 +43,16 @@
   </group>
   <group unless="$(arg sim)">
       <include file="$(find shelf_ur3_moveit_config)/launch/shelf_ur3_bringup.launch">
-<<<<<<< HEAD
         <!-- <arg name="robot_ip" value="$(arg robot_ip)" /> -->
         <arg name="sim" value="$(arg sim)" />
         <!-- <arg name="robot_ip" value="$(arg robot_ip)" /> -->
-=======
-        <arg name="robot_ip" value="$(arg robot_ip)" />
->>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
       </include>
     </group>
 
   <!-- Given the published joint states, publish tf for the robot links -->
-   <group if="$(arg sim)">
-     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
-   </group>
+  
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
+  
 
   <!-- Run the main MoveIt! executable without trajectory execution (we do not have controllers configured by default) -->
   <group if="$(arg sim)">
@@ -86,6 +74,9 @@
     <arg name="config" value="true"/>
     <arg name="debug" value="$(arg debug)"/> 
   </include>
+
+  <node pkg="tf" type="static_transform_publisher" name="ur3_broadcaster" args="-0.08803301705385956 0.09165421739354887 -0.19807676092186394 -0.3875335654931602 -0.15406060323338922 -0.9052133506464828 0.0816814297064534 leftbase_link kinect2_rgb_optical_frame 100" />
+
 
   <!-- If database loading was enabled, start mongodb as well -->
   <!-- <include file="$(find shelf_ur3_moveit_config)/launch/default_warehouse_db.launch" if="$(arg db)">

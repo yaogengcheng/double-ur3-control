@@ -1,0 +1,13 @@
+<launch>
+
+   <include file="$(find ur_gazebo)/launch/ur3.launch" /> 
+ 
+   <include file="$(find ur3_moveit_config)/launch/move_group.launch">
+    <arg name="allow_trajectory_execution" value="true"/>
+    <arg name="fake_execution" value="true"/>
+    <arg name="info" value="true"/>
+ 
+    </include> 
+    <include file="$(find ur3_moveit_config)/launch/moveit_rviz.launch"/>
+  
+</launch>

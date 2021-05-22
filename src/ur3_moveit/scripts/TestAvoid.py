@@ -3,19 +3,16 @@
 
 import rospy, sys
 import moveit_commander
-<<<<<<< HEAD
-<<<<<<< HEAD
 from nav_msgs import path
 from moveit_commander import MoveGroupCommander, PlanningSceneInterface,RobotCommander
 from moveit_msgs.msg import PlanningScene, ObjectColor,DisplayTrajectory
-=======
+
 from moveit_commander import MoveGroupCommander, PlanningSceneInterface
 from moveit_msgs.msg import PlanningScene, ObjectColor
->>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
-=======
+
 from moveit_commander import MoveGroupCommander, PlanningSceneInterface
 from moveit_msgs.msg import PlanningScene, ObjectColor
->>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
+
 from geometry_msgs.msg import PoseStamped, Pose
 
 
@@ -36,8 +33,6 @@ class MoveItObstaclesDemo:
         # 创建一个存储物体颜色的字典对象
         self.colors = dict()
 
-<<<<<<< HEAD
-<<<<<<< HEAD
         self.trajectory_publisher = rospy.Publisher('/path',
                                                      path,
                                                      queue_size=20)
@@ -49,16 +44,13 @@ class MoveItObstaclesDemo:
 
         robot_cmd = RobotCommander()
 
-=======
         # 等待场景准备就绪
         rospy.sleep(1)
 
->>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
-=======
         # 等待场景准备就绪
         rospy.sleep(1)
 
->>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
+
         # 初始化需要使用move group控制的机械臂中的arm group
         arm = MoveGroupCommander('manipulator')
 

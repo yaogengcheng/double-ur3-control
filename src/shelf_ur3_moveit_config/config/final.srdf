@@ -10,13 +10,7 @@
     <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
     <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
     <group name="left_manipulator">
-<<<<<<< HEAD
-<<<<<<< HEAD
         <link name="lefttool0" />
-=======
->>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
-=======
->>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
         <joint name="leftshoulder_pan_joint" />
         <joint name="leftshoulder_lift_joint" />
         <joint name="leftelbow_joint" />
@@ -25,13 +19,7 @@
         <joint name="leftwrist_3_joint" />
     </group>
     <group name="right_manipulator">
-<<<<<<< HEAD
-<<<<<<< HEAD
         <link name="righttool0" />
-=======
->>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
-=======
->>>>>>> 25ae63914df697fee2763bb5a5387deacf7e59c9
         <joint name="rightshoulder_pan_joint" />
         <joint name="rightshoulder_lift_joint" />
         <joint name="rightelbow_joint" />
